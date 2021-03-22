@@ -3,27 +3,24 @@
 
 import PackageDescription
 
+
 let package = Package(
     name: "HBDNavigationBar",
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "HBDNavigationBar",
-            targets: ["HBDNavigationBar"]),
-    ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .library(name: "HBDNavigationBar", targets: ["HBDNavigationBar"])
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "HBDNavigationBar",
             dependencies: [],
-            path:"HBDNavigationBar"),
-        .testTarget(
-            name: "HBDNavigationBarTests",
-            dependencies: ["HBDNavigationBar"]),
+            path: ".",
+            sources: ["HBDNavigationBar.h",
+                      "HBDNavigationBar.m",
+                      "HBDNavigationController.h",
+                      "HBDNavigationController.m",
+                      "UIViewController+HBD.h",
+                      "UIViewController+HBD.m"],
+            publicHeadersPath: "include"
+        )
     ]
 )
